@@ -82,11 +82,14 @@ AFRAME.registerComponent('duck', {
         this.el.addEventListener(
             'click',
             () => {
-                this.el.setAttribute('animation', 'property: position; to: -0 5 0; dur: 2000; easing: easeOutExpo;');
                 liff.init({ liffId: process.env.LIFF_ID })
                     .then(() => {
                         liff.getProfile().then((profile) => {
                             alert(profile.displayName);
+                            this.el.setAttribute(
+                                'animation',
+                                'property: position; to: -0 5 0; dur: 2000; easing: easeOutExpo;'
+                            );
                         });
                     })
                     .catch((error) => {
