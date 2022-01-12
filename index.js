@@ -81,7 +81,7 @@ document.addEventListener('load', function () {
     }
     liff.init({ liffId: process.env.LIFF_ID })
         .then(() => {
-            console.log('Success! you can do something with LIFF API here.');
+            alert(liff.getProfile().displayName);
         })
         .catch((error) => {
             console.log(error);
