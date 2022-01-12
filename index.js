@@ -87,8 +87,8 @@ AFRAME.registerComponent('duck', {
                     .then(() => {
                         liff.getProfile().then((profile) => {
                             alert(profile.displayName);
+                            location.href = 'https://www.google.com';
                         });
-                        location.href = 'https://www.google.com';
                     })
                     .catch((error) => {
                         alert(error);
