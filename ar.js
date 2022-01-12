@@ -86,12 +86,10 @@ AFRAME.registerComponent('duck', {
                 liff.init({ liffId: '1656788750-0YlgEZw2' }).then(() => {
                     liff.getProfile().then((profile) => {
                         userName = profile.displayName;
-                        liff.permanentLink
-                            .createUrlBy(`${location.origin}/get.html?id=duck&name=${userName}`)
-                            .then((url) => {
-                                location.replace(url);
-                            });
+                        console.log(profile);
+                        console.log(userName);
                     });
+                    location.href = `./get.html?id=duck&name=${userName}`;
                 });
             },
             false
