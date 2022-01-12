@@ -48,34 +48,24 @@ AFRAME.registerComponent('box', {
     //     // Do something on every scene tick or frame.
     // }
 });
-AFRAME.registerComponent('apple', {
-    // schema: {},
-
-    init: function () {
-        this.el.addEventListener(
-            'click',
-            () => {
-                this.el.setAttribute('visible', false);
-            },
-            false
-        );
-    }
-});
-AFRAME.registerComponent('cage', {
-    // schema: {},
-
-    init: function () {
-        this.el.addEventListener(
-            'click',
-            () => {
-                console.log('clicked');
-                // location.href = './get.html';
-            },
-            false
-        );
-    }
-});
 AFRAME.registerComponent('duck', {
+    // schema: {},
+
+    init: function () {
+        this.el.addEventListener(
+            'click',
+            () => {
+                liff.init({ liffId: process.env.LIFF_ID }).then(() => {
+                    liff.getProfile().then((profile) => {
+                        location.href = `./get.html?id=duck&name=${profile.displayName}`;
+                    });
+                });
+            },
+            false
+        );
+    }
+});
+AFRAME.registerComponent('deer', {
     // schema: {},
 
     init: function () {
@@ -101,7 +91,4 @@ document.addEventListener('load', function () {
             external: true
         });
     }
-    liff.init({ liffId: process.env.LIFF_ID }).catch((error) => {
-        alert(error);
-    });
 });

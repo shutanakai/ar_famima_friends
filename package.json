@@ -4,12 +4,14 @@
     "description": "",
     "main": "script.js",
     "scripts": {
+        "start": "npm-run-all --parallel build server",
         "build": "npm-run-all --parallel build:*",
-        "build:html": "cpx '*.html' ./dist",
-        "build:css": "cpx '*.css' ./dist",
-        "build:js": "cpx '*.js' ./dist",
-        "build:images": "cpx './images/**/*' ./dist/images",
-        "build:models": "cpx './models/**/*' ./dist/models"
+        "build:html": "cpx './html/*.html' ./dist --watch",
+        "build:scss": "sass ./scss/:./dist --style expanded --no-source-map --watch",
+        "build:js": "cpx './js/*.js' ./dist --watch",
+        "build:images": "cpx './images/**/*' ./dist/images --watch",
+        "build:models": "cpx './models/**/*' ./dist/models --watch",
+        "server": "browser-sync start --config bs-config.js"
     },
     "repository": {
         "type": "git",
@@ -26,10 +28,12 @@
         "@babel/core": "^7.16.7",
         "@babel/preset-env": "^7.16.8",
         "babel-loader": "^8.2.3",
+        "browser-sync": "^2.27.7",
         "core-js": "^3.20.2",
         "cpx": "^1.5.0",
         "dotenv": "^11.0.0",
         "npm-run-all": "^4.1.5",
+        "sass": "^1.47.0",
         "webpack": "^5.65.0",
         "webpack-cli": "^4.9.1"
     }
