@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="app">
-            <h2>{{ monsterId }}と、おともだちになりました！</h2>
+            <h2>{{ monsterNames[monsterId] }}と、おともだちになりました！</h2>
             <img v-bind:src="`images/model_${monsterId}.png`" v-bind:alt="monsterNames[monsterId]" />
         </div>
         <script>
@@ -24,7 +24,7 @@
                 data: {
                     userName: '',
                     monsterId: '',
-                    mosterNames: {
+                    monsterNames: {
                         deer: 'シカさん'
                     }
                 },
