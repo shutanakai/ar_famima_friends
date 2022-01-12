@@ -6,7 +6,7 @@ AFRAME.registerComponent('box', {
             'click',
             () => {
                 console.log(process.env);
-                liff.init({ liffId: process.env.LIFF_ID })
+                liff.init({ liffId: '1656788750-0YlgEZw2' })
                     .then(() => {
                         liff.getProfile().then((profile) => {
                             alert(profile.displayName);
@@ -83,7 +83,7 @@ AFRAME.registerComponent('duck', {
         this.el.addEventListener(
             'click',
             () => {
-                liff.init({ liffId: process.env.LIFF_ID })
+                liff.init({ liffId: '1656788750-0YlgEZw2' })
                     .then(() => {
                         liff.getProfile().then((profile) => {
                             alert(profile.displayName);
@@ -102,7 +102,7 @@ document.addEventListener('load', function () {
     const canGetUserMediaVersion = 14.3;
     if (liff.getOS() === 'ios' && parseFloat(liff.getLineVersion()) < canGetUserMediaVersion) {
         liff.openWindow({
-            url: process.env.LIFF_URL,
+            url: 'https://liff.line.me/1656788750-0YlgEZw2',
             external: true
         });
     }
