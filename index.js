@@ -83,6 +83,7 @@ AFRAME.registerComponent('duck', {
         this.el.addEventListener(
             'click',
             () => {
+                console.log(process.env);
                 liff.init({ liffId: process.env.LIFF_ID })
                     .then(() => {
                         liff.getProfile().then((profile) => {
