@@ -76,7 +76,7 @@ class Aframe {
                     () => {
                         liff.init({ liffId: process.env.LIFF_ID }).then(() => {
                             liff.getProfile().then((profile) => {
-                                location.href = `./get.html?id=duck&name=${profile.displayName}`;
+                                location.href = `./get.html?id=deer&name=${profile.displayName}`;
                             });
                         });
                     },

@@ -1,0 +1,46 @@
+@use "settings";
+
+// メディアクエリ
+@mixin respond-to($media) {
+  // スマートフォン
+  @if $media == settings.$handhelds {
+    @media only all and (max-width: settings.$break-small) { @content; }
+  }
+  // タブレット
+  @if $media == settings.$medium-screens {
+    @media only all and (min-width: (settings.$break-small + 1)) and (max-width: settings.$break-large) { @content; }
+  }
+  // デスクトップ
+  @if $media == settings.$wide-screens {
+    @media only all and (min-width: (settings.$break-large + 1)) { @content; }
+  }
+  // タブレット + デスクトップ
+  @if $media == settings.$medium-and-wide-screens {
+    @media only all and (min-width: (settings.$break-small + 1)) { @content; }
+  }
+}
+
+// ClearFix
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// テキスト非表示
+@mixin textHidden() {
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -9999px;
+}
+
+// トランジション
+@mixin transition($property: all, $duration: 200ms, $delay: 0ms, $timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-delay: $delay;
+  transition-timing-function: $timing-function;
+}
