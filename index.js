@@ -82,7 +82,7 @@ AFRAME.registerComponent('duck', {
         this.el.addEventListener(
             'click',
             () => {
-                this.el.setAttribute('animation', 'property: position; to: -40 8 -10; dur: 2000; easing: linear;');
+                this.el.setAttribute('animation', 'property: position; to: -0 5 0; dur: 2000; easing: easeOutExpo;');
                 liff.init({ liffId: process.env.LIFF_ID })
                     .then(() => {
                         liff.getProfile().then((profile) => {
@@ -101,7 +101,7 @@ AFRAME.registerComponent('duck', {
             () => {
                 this.el.setAttribute(
                     'animation',
-                    'property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true"'
+                    'property: position; to: 0 1 0; dur: 2000; easing: easeInCubic; loop: true"'
                 );
             },
             false
