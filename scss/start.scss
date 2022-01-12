@@ -47,11 +47,13 @@
         font-size: 1.5rem;
         text-align: center;
         &--ar {
+            width: 40%;
             top: settings.$size-150px-to-vw;
             background-color: #00a040;
             color: #fff;
         }
         &--list {
+            width: calc(40% - 6px);
             top: settings.$size-220px-to-vw;
             border: 3px solid #fff;
             color: #fff;
