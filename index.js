@@ -75,21 +75,17 @@ AFRAME.registerComponent('cage', {
     }
 });
 
-let url = 'https://www.google.com/';
-
-document.addEventListener('load', function () {
-    const canGetUserMediaVersion = 14.3;
-    if (liff.getOS() === 'ios' && parseFloat(liff.getLineVersion()) < canGetUserMediaVersion) {
-        liff.openWindow({
-            url: 'https://www.google.com/',
-            external: true
-        });
-    }
-    liff.init({ liffId: process.env.LIFF_ID })
-        .then(() => {
-            alert(liff.getProfile().displayName);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-});
+const canGetUserMediaVersion = 14.3;
+if (liff.getOS() === 'ios' && parseFloat(liff.getLineVersion()) < canGetUserMediaVersion) {
+    liff.openWindow({
+        url: 'https://www.google.com/',
+        external: true
+    });
+}
+liff.init({ liffId: process.env.LIFF_ID })
+    .then(() => {
+        alert(liff.getProfile().displayName);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
