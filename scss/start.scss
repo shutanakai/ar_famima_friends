@@ -17,7 +17,7 @@
         overflow-x: hidden;
         background-color: #008bd8;
     }
-    &__image {
+    &__parent {
         position: relative;
         z-index: 10;
         display: block;
@@ -35,7 +35,10 @@
     }
     &__button {
         position: absolute;
-        bottom: settings.$size-130px-to-vw;
+        top: settings.$size-150px-to-vw;
+        left: 0;
+        right: 0;
+        margin: auto;
         z-index: 10;
         display: block;
         width: 40%;
@@ -52,15 +55,15 @@
         z-index: 50;
         width: settings.$size-65px-to-vw;
         &--dog {
-            bottom: settings.$size-123px-to-vw;
+            bottom: settings.$size-minus-200px-to-vw;
             left: settings.$size-23px-to-vw;
         }
         &--rabbit {
-            bottom: settings.$size-160px-to-vw;
+            bottom: settings.$size-minus-325px-to-vw;
             right: settings.$size-23px-to-vw;
         }
         &--cat {
-            bottom: settings.$size-300px-to-vw;
+            bottom: settings.$size-minus-300px-to-vw;
             left: settings.$size-45px-to-vw;
         }
     }
