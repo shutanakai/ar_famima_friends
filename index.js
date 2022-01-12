@@ -10,7 +10,6 @@ AFRAME.registerComponent('box', {
                         liff.getProfile().then((profile) => {
                             alert(profile.displayName);
                         });
-                        location.href = 'https://www.google.com';
                     })
                     .catch((error) => {
                         alert(error);
@@ -92,27 +91,6 @@ AFRAME.registerComponent('duck', {
                     .catch((error) => {
                         alert(error);
                     });
-                console.log(this);
-                this.el.setAttribute('animation', 'property: position; to: -0 5 0; dur: 2000; easing: easeOutExpo;');
-            },
-            false
-        );
-
-        this.el.addEventListener(
-            'raycaster-intersected',
-            () => {
-                this.el.setAttribute(
-                    'animation',
-                    'property: position; to: 0 1 0; dur: 2000; easing: easeInCubic; loop: true"'
-                );
-            },
-            false
-        );
-
-        this.el.addEventListener(
-            'raycaster-intersected-cleared',
-            () => {
-                this.el.setAttribute('animation', '');
             },
             false
         );
