@@ -86,10 +86,11 @@ AFRAME.registerComponent('duck', {
                 liff.init({ liffId: '1656788750-0YlgEZw2' })
                     .then(() => {
                         liff.getProfile().then((profile) => {
-                            liff.openWindow({
-                                url: `https://stupefied-torvalds-7636a6.netlify.app/get.html?id=duck&name=${profile.displayName}`,
-                                external: true
-                            });
+                            alert(profile.displayName);
+                            // liff.openWindow({
+                            //     url: `https://stupefied-torvalds-7636a6.netlify.app/get.html?id=duck&name=${profile.displayName}`,
+                            //     external: true
+                            // });
                         });
                     })
                     .catch((error) => {
