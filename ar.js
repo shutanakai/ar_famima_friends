@@ -1,3 +1,5 @@
+let userName;
+
 AFRAME.registerComponent('box', {
     // schema: {},
 
@@ -83,19 +85,7 @@ AFRAME.registerComponent('duck', {
         this.el.addEventListener(
             'click',
             () => {
-                liff.init({ liffId: '1656788750-0YlgEZw2' })
-                    .then(() => {
-                        liff.getProfile().then((profile) => {
-                            alert(profile.displayName);
-                            // liff.openWindow({
-                            //     url: `https://stupefied-torvalds-7636a6.netlify.app/get.html?id=duck&name=${profile.displayName}`,
-                            //     external: true
-                            // });
-                        });
-                    })
-                    .catch((error) => {
-                        alert(error);
-                    });
+                location.href = `./get.html?id=duck&name=${userName}`;
             },
             false
         );
@@ -110,4 +100,13 @@ document.addEventListener('load', function () {
             external: true
         });
     }
+    liff.init({ liffId: '1656788750-0YlgEZw2' })
+        .then(() => {
+            liff.getProfile().then((profile) => {
+                userName = profile.displayName;
+            });
+        })
+        .catch((error) => {
+            alert(error);
+        });
 });
