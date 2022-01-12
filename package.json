@@ -1,0 +1,20 @@
+{
+  "name": "ar_famima_friends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shutanakai/ar_famima_friends.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shutanakai/ar_famima_friends/issues"
+  },
+  "homepage": "https://github.com/shutanakai/ar_famima_friends#readme"
+}

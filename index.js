@@ -79,7 +79,7 @@ document.addEventListener('load', function () {
             external: true
         });
     }
-    liff.init({ liffId: process.env.LIFF_ID })
+    liff.init({ liffId: '1656788750-0YlgEZw2' })
         .then(() => {
             console.log('Success! you can do something with LIFF API here.');
         })
