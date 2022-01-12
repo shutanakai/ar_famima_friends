@@ -9,16 +9,18 @@
     </head>
     <body>
         <div id="app">
-            <h2>{{ monsterId }}を捕まえました！</h2>
-            <p>捕獲者： {{ userName }}さん</p>
-            <img v-bind:src="`images/${monsterId}.png`" />
+            <h2>{{ monsterNames[monsterId] }}と、おともだちになりました！</h2>
+            <img v-bind:src="`images/model_${monsterId}.png`" />
         </div>
         <script>
             var app5 = new Vue({
                 el: '#app',
                 data: {
                     userName: '',
-                    monsterId: ''
+                    monsterId: '',
+                    mosterNames: {
+                        deer: 'シカさん'
+                    }
                 },
                 mounted: function () {
                     this.userName = this.getParam('name');
