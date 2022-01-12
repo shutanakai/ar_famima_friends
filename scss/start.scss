@@ -35,7 +35,6 @@
     }
     &__button {
         position: absolute;
-        top: settings.$size-150px-to-vw;
         left: 0;
         right: 0;
         margin: auto;
@@ -47,8 +46,16 @@
         border-radius: 15px;
         font-size: 1.5rem;
         text-align: center;
-        background-color: #00a040;
-        color: #fff;
+        &--ar {
+            top: settings.$size-150px-to-vw;
+            background-color: #00a040;
+            color: #fff;
+        }
+        &--list {
+            top: settings.$size-220px-to-vw;
+            outline: 3px solid #fff;
+            color: #fff;
+        }
     }
     &__animal {
         position: absolute;
@@ -63,8 +70,8 @@
             right: settings.$size-23px-to-vw;
         }
         &--cat {
-            bottom: settings.$size-minus-300px-to-vw;
-            left: settings.$size-45px-to-vw;
+            bottom: settings.$size-minus-350px-to-vw;
+            left: settings.$size-35px-to-vw;
         }
     }
 }
@@ -78,7 +85,7 @@
         background: #075d29;
         border-top-left-radius: 1500%;
         border-top-right-radius: 1500%;
-        height: 80vh;
+        height: 100%;
         margin-left: -100px;
         margin-right: -100px;
         padding-left: 100px;
