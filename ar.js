@@ -1,5 +1,3 @@
-let userName;
-
 AFRAME.registerComponent('box', {
     // schema: {},
 
@@ -7,7 +5,6 @@ AFRAME.registerComponent('box', {
         this.el.addEventListener(
             'click',
             () => {
-                console.log(process.env);
                 liff.init({ liffId: '1656788750-0YlgEZw2' })
                     .then(() => {
                         liff.getProfile().then((profile) => {
@@ -85,6 +82,10 @@ AFRAME.registerComponent('duck', {
         this.el.addEventListener(
             'click',
             () => {
+                let userName;
+                liff.getProfile().then((profile) => {
+                    userName = profile.displayName;
+                });
                 location.href = `./get.html?id=duck&name=${userName}`;
             },
             false
