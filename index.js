@@ -86,8 +86,7 @@ AFRAME.registerComponent('duck', {
                 liff.init({ liffId: '1656788750-0YlgEZw2' })
                     .then(() => {
                         liff.getProfile().then((profile) => {
-                            alert(profile.displayName);
-                            location.href = 'https://www.google.com';
+                            location.href = `https://www.google.com?name=${profile.displayName}`;
                         });
                     })
                     .catch((error) => {
