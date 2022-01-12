@@ -5,7 +5,13 @@ AFRAME.registerComponent('box', {
         this.el.addEventListener(
             'click',
             () => {
-                location.href = url;
+                liff.init({ liffId: process.env.LIFF_ID })
+                    .then(() => {
+                        alert(liff.getProfile().displayName);
+                    })
+                    .catch((error) => {
+                        alert(error);
+                    });
             },
             false
         );
