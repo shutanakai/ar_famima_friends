@@ -5,7 +5,7 @@ AFRAME.registerComponent('box', {
         this.el.addEventListener(
             'click',
             () => {
-                liff.init({ liffId: '1656788750-0YlgEZw2' })
+                liff.init({ liffId: process.env.LIFF_ID })
                     .then(() => {
                         liff.getProfile().then((profile) => {
                             alert(profile.displayName);
@@ -87,7 +87,7 @@ document.addEventListener('load', function () {
             external: true
         });
     }
-    liff.init({ liffId: '1656788750-0YlgEZw2' })
+    liff.init({ liffId: process.env.LIFF_ID })
         .then(() => {
             alert(liff.getProfile().displayName);
         })
