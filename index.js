@@ -79,12 +79,11 @@ document.addEventListener('load', function () {
             external: true
         });
     }
-    liff.init({ liffId: '1656788750-0YlgEZw2' })
+    liff.init({ liffId: process.env.LIFF_ID })
         .then(() => {
             console.log('Success! you can do something with LIFF API here.');
         })
         .catch((error) => {
             console.log(error);
         });
-    url = 'https://www.yahoo.co.jp/';
 });

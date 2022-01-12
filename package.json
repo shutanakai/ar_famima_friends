@@ -1,20 +1,29 @@
 {
-  "name": "ar_famima_friends",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shutanakai/ar_famima_friends.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shutanakai/ar_famima_friends/issues"
-  },
-  "homepage": "https://github.com/shutanakai/ar_famima_friends#readme"
+    "name": "ar_famima_friends",
+    "version": "1.0.0",
+    "description": "",
+    "main": "script.js",
+    "scripts": {
+        "build": "webpack --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shutanakai/ar_famima_friends.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/shutanakai/ar_famima_friends/issues"
+    },
+    "homepage": "https://github.com/shutanakai/ar_famima_friends#readme",
+    "devDependencies": {
+        "@babel/core": "^7.16.7",
+        "@babel/preset-env": "^7.16.8",
+        "babel-loader": "^8.2.3",
+        "core-js": "^3.20.2",
+        "dotenv": "^11.0.0",
+        "webpack": "^5.65.0",
+        "webpack-cli": "^4.9.1"
+    }
 }
