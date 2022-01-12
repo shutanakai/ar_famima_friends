@@ -87,7 +87,7 @@ AFRAME.registerComponent('duck', {
                     .then(() => {
                         liff.getProfile().then((profile) => {
                             liff.openWindow({
-                                url: `./get.html?id=duck&name=${profile.displayName}`,
+                                url: `https://stupefied-torvalds-7636a6.netlify.app/get.html?id=duck&name=${profile.displayName}`,
                                 external: true
                             });
                         });
