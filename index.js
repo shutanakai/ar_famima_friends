@@ -85,7 +85,7 @@ document.addEventListener('load', function () {
             external: true
         });
     }
-    liff.init({ liffId: process.env.LIFF_ID })
+    liff.init({ liffId: '1656788750-0YlgEZw2' })
         .then(() => {
             alert(liff.getProfile().displayName);
         })
