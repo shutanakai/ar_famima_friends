@@ -44,7 +44,8 @@
         margin: 0 auto;
         padding: 1rem;
         border-radius: 15px;
-        font-size: 1.5rem;
+        font-feature-settings: 'palt';
+        font-size: settings.$size-20px-to-vw;
         text-align: center;
         &--ar {
             top: settings.$size-150px-to-vw;
