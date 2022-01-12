@@ -82,7 +82,7 @@ AFRAME.registerComponent('duck', {
         this.el.addEventListener(
             'click',
             () => {
-                liff.init({ liffId: '1656788750-0YlgEZw2' }).then(() => {
+                liff.init({ liffId: process.env.LIFF_ID }).then(() => {
                     liff.getProfile().then((profile) => {
                         location.href = `./get.html?id=duck&name=${profile.displayName}`;
                     });
@@ -97,11 +97,11 @@ document.addEventListener('load', function () {
     const canGetUserMediaVersion = 14.3;
     if (liff.getOS() === 'ios' && parseFloat(liff.getLineVersion()) < canGetUserMediaVersion) {
         liff.openWindow({
-            url: 'https://liff.line.me/1656788750-0YlgEZw2',
+            url: process.env.LIFF_URL,
             external: true
         });
     }
-    liff.init({ liffId: '1656788750-0YlgEZw2' }).catch((error) => {
+    liff.init({ liffId: process.env.LIFF_ID }).catch((error) => {
         alert(error);
     });
 });
