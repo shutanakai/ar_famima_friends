@@ -89,7 +89,7 @@ AFRAME.registerComponent('duck', {
                         console.log(profile);
                         console.log(userName);
                     });
-                    location.href = `./get.html?id=duck&name=${userName}`;
+                    // location.href = `./get.html?id=duck&name=${userName}`;
                 });
             },
             false
