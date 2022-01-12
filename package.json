@@ -5,8 +5,8 @@
     "main": "script.js",
     "scripts": {
         "build": "npm-run-all --parallel build:*",
-        "build:html": "cpx 'index.html' ./dist",
-        "build:css": "cpx 'index.css' ./dist",
+        "build:html": "cpx '*.html' ./dist",
+        "build:css": "cpx '*.css' ./dist",
         "build:webpack": "webpack",
         "build:images": "cpx './images/**/*' ./dist/images",
         "build:models": "cpx './models/**/*' ./dist/models"
