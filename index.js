@@ -61,7 +61,6 @@ AFRAME.registerComponent('apple', {
         );
     }
 });
-
 AFRAME.registerComponent('cage', {
     // schema: {},
 
@@ -76,6 +75,27 @@ AFRAME.registerComponent('cage', {
         );
     }
 });
+AFRAME.registerComponent('duck', {
+    // schema: {},
+
+    init: function () {
+        this.el.addEventListener(
+            'click',
+            () => {
+                liff.init({ liffId: process.env.LIFF_ID })
+                    .then(() => {
+                        liff.getProfile().then((profile) => {
+                            alert(profile.displayName);
+                        });
+                    })
+                    .catch((error) => {
+                        alert(error);
+                    });
+            },
+            false
+        );
+    }
+});
 
 let url = 'https://www.google.com/';
 
@@ -83,7 +103,7 @@ document.addEventListener('load', function () {
     const canGetUserMediaVersion = 14.3;
     if (liff.getOS() === 'ios' && parseFloat(liff.getLineVersion()) < canGetUserMediaVersion) {
         liff.openWindow({
-            url: 'https://www.google.com/',
+            url: process.env.LIFF_URL,
             external: true
         });
     }
