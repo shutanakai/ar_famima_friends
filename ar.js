@@ -101,13 +101,7 @@ document.addEventListener('load', function () {
             external: true
         });
     }
-    liff.init({ liffId: '1656788750-0YlgEZw2' })
-        .then(() => {
-            liff.getProfile().then((profile) => {
-                userName = profile.displayName;
-            });
-        })
-        .catch((error) => {
-            alert(error);
-        });
+    liff.init({ liffId: '1656788750-0YlgEZw2' }).catch((error) => {
+        alert(error);
+    });
 });
