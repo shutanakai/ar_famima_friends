@@ -4,7 +4,10 @@
     "description": "",
     "main": "script.js",
     "scripts": {
-        "build": "webpack --watch"
+        "build": "npm-run-all --parallel build:*",
+        "build:html": "cpx 'index.html' ./dist",
+        "build:css": "cpx 'index.css' ./dist",
+        "build:webpack": "webpack"
     },
     "repository": {
         "type": "git",
@@ -22,7 +25,9 @@
         "@babel/preset-env": "^7.16.8",
         "babel-loader": "^8.2.3",
         "core-js": "^3.20.2",
+        "cpx": "^1.5.0",
         "dotenv": "^11.0.0",
+        "npm-run-all": "^4.1.5",
         "webpack": "^5.65.0",
         "webpack-cli": "^4.9.1"
     }

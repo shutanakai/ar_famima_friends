@@ -5,7 +5,7 @@ const env = dotenv.config().parsed;
 module.exports = {
     entry: './index.js',
     output: {
-        path: `${__dirname}/`,
+        path: `${__dirname}/dist`,
         filename: 'script.js'
     },
     module: {
