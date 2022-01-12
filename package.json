@@ -5,12 +5,18 @@
     "main": "script.js",
     "scripts": {
         "start": "npm-run-all --parallel build server",
+        "dev": "npm-run-all --parallel dev:*",
+        "dev:html": "cpx './html/*.html' ./dist --watch",
+        "dev:scss": "sass ./scss/:./dist --style expanded --no-source-map --watch",
+        "dev:js": "cpx './js/*.js' ./dist --watch",
+        "dev:images": "cpx './images/**/*' ./dist/images --watch",
+        "dev:models": "cpx './models/**/*' ./dist/models --watch",
         "build": "npm-run-all --parallel build:*",
-        "build:html": "cpx './html/*.html' ./dist --watch",
-        "build:scss": "sass ./scss/:./dist --style expanded --no-source-map --watch",
-        "build:js": "cpx './js/*.js' ./dist --watch",
-        "build:images": "cpx './images/**/*' ./dist/images --watch",
-        "build:models": "cpx './models/**/*' ./dist/models --watch",
+        "build:html": "cpx './html/*.html' ./dist",
+        "build:scss": "sass ./scss/:./dist --style expanded --no-source-map",
+        "build:js": "cpx './js/*.js' ./dist",
+        "build:images": "cpx './images/**/*' ./dist/images",
+        "build:models": "cpx './models/**/*' ./dist/models",
         "server": "browser-sync start --config bs-config.js"
     },
     "repository": {
