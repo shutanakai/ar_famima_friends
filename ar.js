@@ -88,8 +88,9 @@ AFRAME.registerComponent('duck', {
                     liff.getProfile().then((profile) => {
                         userName = profile.displayName;
                         url = liff.permanentLink.createUrlBy(`${location.origin}/get.html?id=duck&name=${userName}`);
+                        console.log(url);
                     });
-                    location.replace(url);
+                    // location.replace(url);
                 });
             },
             false
