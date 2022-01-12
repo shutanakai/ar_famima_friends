@@ -1,7 +1,7 @@
 module.exports = {
     entry: `./webpack/index.js`,
     output: {
-        path: `${__dirname}/dist/js`,
+        path: `${__dirname}/dist`,
         filename: 'script.js'
     },
     module: {
@@ -14,7 +14,8 @@ module.exports = {
                     options: {
                         presets: [
                             [
-                                '@babel/preset-env', {
+                                '@babel/preset-env',
+                                {
                                     useBuiltIns: 'usage',
                                     corejs: {
                                         version: 3,
@@ -28,7 +29,5 @@ module.exports = {
             }
         ]
     },
-    target: ['web', 'es5'],
-    // mode: 'development',
-    mode: 'production'
+    target: ['web', 'es5']
 };
