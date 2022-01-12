@@ -5,7 +5,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
         <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
         <link href="get.css" rel="stylesheet" />
-        <title>友達ができました | あつめてファミマフレンズ</title>
+        <title>おともだちができました | あつめてファミマフレンズ</title>
         <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
         <link href="./common.css" rel="stylesheet" type="text/css" />
         <link href="./get.css" rel="stylesheet" type="text/css" />
@@ -16,7 +16,7 @@
     </head>
     <body>
         <div id="app">
-            <h2>{{ monsterNames[monsterId] }}と、おともだちになりました！</h2>
+            <h2>{{ monsterId }}と、おともだちになりました！</h2>
             <img v-bind:src="`images/model_${monsterId}.png`" v-bind:alt="monsterNames[monsterId]" />
         </div>
         <script>
