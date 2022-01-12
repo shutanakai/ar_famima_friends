@@ -5,7 +5,7 @@ AFRAME.registerComponent('box', {
         this.el.addEventListener(
             'click',
             () => {
-                liff.init({ liffId: process.env.LIFF_ID })
+                liff.init({ liffId: '1656788750-0YlgEZw2' })
                     .then(() => {
                         alert(liff.getProfile().displayName);
                     })
