@@ -7,7 +7,9 @@ AFRAME.registerComponent('box', {
             () => {
                 liff.init({ liffId: '1656788750-0YlgEZw2' })
                     .then(() => {
-                        alert(liff.getProfile().displayName);
+                        liff.getProfile().then((profile) => {
+                            alert(profile.displayName);
+                        });
                     })
                     .catch((error) => {
                         alert(error);
