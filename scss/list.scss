@@ -42,12 +42,12 @@
         flex-wrap: wrap;
         & > li {
             width: 25%;
-            aspect-ratio: 0.7;
+            aspect-ratio: 7 / 10;
             margin-bottom: settings.$size-20px-to-vw;
             & > .list__space {
                 position: relative;
                 width: 80%;
-                aspect-ratio: 1;
+                aspect-ratio: 1 / 1;
                 margin: 0 auto;
                 background-color: #92d0f1;
                 & > img {
@@ -73,7 +73,7 @@
                     content: '';
                     display: block;
                     width: 88%;
-                    aspect-ratio: 1;
+                    aspect-ratio: 1 / 1;
                     transform: rotate(45deg);
                     background-color: #fdf397;
                 }
