@@ -38,12 +38,12 @@
                         </li>
                         <li>
                             <div class="list__space">
-                                <transition-group>
-                                    <template v-if="show">
-                                        <img src="images/deer.png" alt="deer" />
-                                        <p class="list__name">シカさん</p>
-                                    </template>
-                                </transition-group>
+                                <transition>
+                                    <img v-if="show" src="images/deer.png" alt="deer" />
+                                </transition>
+                                <transition>
+                                    <p v-if="show" class="list__name">シカさん</p>
+                                </transition>
                                 <p class="list__coupon">タップで<br />クーポンゲット！</p>
                                 <div class="list__decorate"></div>
                             </div>
