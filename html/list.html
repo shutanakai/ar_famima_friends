@@ -39,10 +39,10 @@
                         <li>
                             <div class="list__space">
                                 <transition>
-                                    <img v-if="show" src="images/deer.png" alt="deer" />
+                                    <img v-if="showImage" src="images/deer.png" alt="deer" />
                                 </transition>
                                 <transition>
-                                    <p v-if="show" class="list__name">シカさん</p>
+                                    <p v-if="showName" class="list__name">シカさん</p>
                                 </transition>
                                 <p class="list__coupon">タップで<br />クーポンゲット！</p>
                                 <div class="list__decorate"></div>
@@ -88,13 +88,17 @@
                 el: '#list',
                 data: {
                     userName: '',
-                    show: false
+                    showImage: false,
+                    showName: false
                 },
                 mounted: function () {
                     this.login();
                     setTimeout(() => {
-                        this.show = true;
+                        this.showImage = true;
                     }, 1000);
+                    setTimeout(() => {
+                        this.showName = true;
+                    }, 2000);
                 },
                 methods: {
                     login: function () {
