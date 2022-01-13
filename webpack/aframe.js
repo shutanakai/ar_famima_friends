@@ -74,9 +74,8 @@ class Aframe {
                 this.el.addEventListener(
                     'click',
                     () => {
-                        console.log(document.getElementById('star'));
                         const star = document.getElementById('star');
-                        star.el.components['particle-system'].startParticles();
+                        star.components['particle-system'].startParticles();
                         liff.init({ liffId: process.env.LIFF_ID }).then(() => {
                             liff.getProfile().then((profile) => {
                                 location.href = `./get.html?id=deer&name=${profile.displayName}`;
