@@ -74,41 +74,13 @@ class Aframe {
                 this.el.addEventListener(
                     'click',
                     () => {
+                        const star = document.getElementById('star');
+                        star.el.components['particle-system'].startParticles();
                         liff.init({ liffId: process.env.LIFF_ID }).then(() => {
                             liff.getProfile().then((profile) => {
                                 location.href = `./get.html?id=deer&name=${profile.displayName}`;
                             });
                         });
-                    },
-                    false
-                );
-            }
-        });
-
-        AFRAME.registerComponent('star', {
-            // schema: {},
-
-            init: function () {
-                this.el.addEventListener(
-                    'click',
-                    () => {
-                        this.el.components['particle-system'].startParticles();
-                    },
-                    false
-                );
-
-                this.el.addEventListener(
-                    'raycaster-intersected',
-                    () => {
-                        this.el.components['particle-system'].startParticles();
-                    },
-                    false
-                );
-
-                this.el.addEventListener(
-                    'raycaster-intersected-cleared',
-                    () => {
-                        this.el.components['particle-system'].stopParticles();
                     },
                     false
                 );
