@@ -85,6 +85,52 @@ class Aframe {
             }
         });
 
+        AFRAME.registerComponent('star', {
+            // schema: {},
+
+            init: function () {
+                this.el.addEventListener(
+                    'click',
+                    () => {
+                        liff.init({ liffId: process.env.LIFF_ID }).then(() => {
+                            liff.getProfile().then((profile) => {
+                                location.href = `./get.html?id=deer&name=${profile.displayName}`;
+                            });
+                        });
+                    },
+                    false
+                );
+
+                this.el.addEventListener(
+                    'click',
+                    () => {
+                        liff.init({ liffId: process.env.LIFF_ID }).then(() => {
+                            liff.getProfile().then((profile) => {
+                                location.href = `./get.html?id=deer&name=${profile.displayName}`;
+                            });
+                        });
+                    },
+                    false
+                );
+
+                this.el.addEventListener(
+                    'raycaster-intersected',
+                    () => {
+                        this.el.setAttribute('enable', true);
+                    },
+                    false
+                );
+
+                this.el.addEventListener(
+                    'raycaster-intersected-cleared',
+                    () => {
+                        this.el.setAttribute('enable', false);
+                    },
+                    false
+                );
+            }
+        });
+
         document.addEventListener('load', function () {
             const canGetUserMediaVersion = 14.3;
             if (liff.getOS() === 'ios' && parseFloat(liff.getLineVersion()) < canGetUserMediaVersion) {
