@@ -4,16 +4,17 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
         <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
         <link href="./css/common.css" rel="stylesheet" type="text/css" />
         <link href="./css/list.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div class="list">
+        <div id="list" class="list">
             <main class="list__main">
                 <div class="list__wrapper">
                     <img src="images/familymart.png" alt="FamilyMart" class="list__logo" />
-                    <h1 class="list__head">ファミマフレンズずかん</h1>
+                    <h1 class="list__head">{{ userName }}さんの<br />ファミマフレンズずかん</h1>
                     <p class="list__desp">4かいおともだちをみつけるたび、<br />クーポンがもらえるよ！</p>
                     <ul class="list__list">
                         <li>
@@ -73,9 +74,29 @@
                             </div>
                         </li>
                     </ul>
-                    <a href="./start.html" class="list__button">トップにもどる</a>
+                    <a href="https://liff.line.me/1656788750-QAXNWqrn" class="list__button">トップにもどる</a>
                 </div>
             </main>
         </div>
+        <script>
+            new Vue({
+                el: '#list',
+                data: {
+                    userName: ''
+                },
+                mounted: function () {
+                    this.userName = this.login();
+                },
+                methods: {
+                    login: function () {
+                        liff.init({ liffId: process.env.LIFF_ID }).then(() => {
+                            liff.getProfile().then((profile) => {
+                                return profile.displayName;
+                            });
+                        });
+                    }
+                }
+            });
+        </script>
     </body>
 </html>
