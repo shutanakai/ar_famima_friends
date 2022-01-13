@@ -76,11 +76,13 @@ class Aframe {
                     () => {
                         const star = document.getElementById('star');
                         star.components['particle-system'].startParticles();
-                        liff.init({ liffId: process.env.LIFF_ID }).then(() => {
-                            liff.getProfile().then((profile) => {
-                                location.href = `./get.html?id=deer&name=${profile.displayName}`;
+                        setTimeout(() => {
+                            liff.init({ liffId: process.env.LIFF_ID }).then(() => {
+                                liff.getProfile().then((profile) => {
+                                    location.href = `./get.html?id=deer&name=${profile.displayName}`;
+                                });
                             });
-                        });
+                        }, 2000);
                     },
                     false
                 );
