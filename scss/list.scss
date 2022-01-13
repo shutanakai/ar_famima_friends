@@ -42,8 +42,12 @@
         flex-wrap: wrap;
         & > li {
             width: 25%;
-            aspect-ratio: 7 / 10;
             margin-bottom: settings.$size-20px-to-vw;
+            &:after {
+                content: '';
+                display: block;
+                padding-top: 70%;
+            }
             & > .list__space {
                 position: relative;
                 width: 80%;
