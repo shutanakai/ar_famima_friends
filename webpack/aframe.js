@@ -85,6 +85,36 @@ class Aframe {
             }
         });
 
+        AFRAME.registerComponent('star', {
+            // schema: {},
+
+            init: function () {
+                this.el.addEventListener(
+                    'click',
+                    () => {
+                        this.el.components['particle-system'].startParticles();
+                    },
+                    false
+                );
+
+                this.el.addEventListener(
+                    'raycaster-intersected',
+                    () => {
+                        this.el.components['particle-system'].startParticles();
+                    },
+                    false
+                );
+
+                this.el.addEventListener(
+                    'raycaster-intersected-cleared',
+                    () => {
+                        this.el.components['particle-system'].stopParticles();
+                    },
+                    false
+                );
+            }
+        });
+
         document.addEventListener('load', function () {
             const canGetUserMediaVersion = 14.3;
             if (liff.getOS() === 'ios' && parseFloat(liff.getLineVersion()) < canGetUserMediaVersion) {
