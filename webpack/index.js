@@ -1,8 +1,10 @@
-import Aframe from './aframe';
+import Aframe from './Aframe';
+import List from './List';
 
 class Main {
     constructor() {
         new Aframe();
+        new List();
     }
 }
 
