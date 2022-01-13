@@ -27,6 +27,14 @@
     }
     &__logo {
         position: absolute;
+        top: settings.$size-minus-200px-to-vw;
+        left: 0;
+        right: 0;
+        margin: settings.$size-10px-to-vw auto 0;
+        width: 80%;
+    }
+    &__mv {
+        position: absolute;
         z-index: 100;
         left: 0;
         right: 0;
