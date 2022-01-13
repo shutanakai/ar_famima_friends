@@ -74,20 +74,24 @@
                 width: 80%;
                 margin: 0 auto;
                 background-color: #fdf397;
-                &:after {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    margin: auto;
-                    content: '';
-                    display: block;
-                    width: 88%;
-                    aspect-ratio: 1 / 1;
-                    transform: rotate(45deg);
-                    background-color: #fdf397;
-                }
             }
+        }
+    }
+    &__decorate {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        content: '';
+        display: block;
+        width: 88%;
+        transform: rotate(45deg);
+        background-color: #fdf397;
+        &:before {
+            content: '';
+            display: block;
+            padding-top: 100%;
         }
     }
     &__name {
