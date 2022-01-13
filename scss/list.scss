@@ -53,15 +53,14 @@
                 width: 80%;
                 margin: 0 auto;
                 background-color: #92d0f1;
-                &--noimage {
-                    &:before {
-                        content: '';
-                        display: block;
-                        padding-top: 100%;
-                    }
+                &:before {
+                    content: '';
+                    display: block;
+                    padding-top: 100%;
                 }
                 & > img {
-                    position: relative;
+                    position: absolute;
+                    top: 0;
                     z-index: 10;
                     width: 90%;
                     display: block;
