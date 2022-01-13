@@ -50,8 +50,8 @@
         display: block;
         width: 40%;
         margin: 0 auto;
-        padding: 1rem;
-        border-radius: 15px;
+        padding: settings.$size-15px-to-vw;
+        border-radius: settings.$size-13px-to-vw;
         font-feature-settings: 'palt';
         font-size: settings.$size-20px-to-vw;
         text-align: center;
