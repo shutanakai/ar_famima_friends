@@ -116,7 +116,10 @@ class Aframe {
                 this.el.addEventListener(
                     'raycaster-intersected',
                     () => {
-                        this.el.setAttribute('enable', true);
+                        this.el.setAttribute(
+                            'particle-system',
+                            'preset: default; size: 4; texture: ./images/texture_star.png; color: #fffead'
+                        );
                     },
                     false
                 );
@@ -124,7 +127,7 @@ class Aframe {
                 this.el.addEventListener(
                     'raycaster-intersected-cleared',
                     () => {
-                        this.el.setAttribute('enable', false);
+                        this.el.setAttribute('particle-system', '');
                     },
                     false
                 );
