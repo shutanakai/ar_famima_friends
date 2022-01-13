@@ -51,9 +51,15 @@
             & > .list__space {
                 position: relative;
                 width: 80%;
-                aspect-ratio: 1 / 1;
                 margin: 0 auto;
                 background-color: #92d0f1;
+                &--noimage {
+                    &:before {
+                        content: '';
+                        display: block;
+                        padding-top: 100%;
+                    }
+                }
                 & > img {
                     position: relative;
                     z-index: 10;
@@ -88,12 +94,12 @@
         position: absolute;
         display: block;
         width: 100%;
-        bottom: settings.$size-minus-20px-to-vw;
+        bottom: settings.$size-minus-35px-to-vw;
         text-align: center;
     }
     &__coupon {
         position: absolute;
-        bottom: settings.$size-minus-40px-to-vw;
+        bottom: settings.$size-minus-55px-to-vw;
         display: block;
         width: 100%;
         text-align: center;
