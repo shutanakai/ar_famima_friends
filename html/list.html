@@ -97,6 +97,7 @@
                     login: function () {
                         liff.init({ liffId: '1656788750-JG1xDwnW' }).then(() => {
                             liff.getProfile().then((profile) => {
+                                console.log(profile.displayName);
                                 return profile.displayName;
                             });
                         });
