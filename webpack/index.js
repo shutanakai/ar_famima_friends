@@ -1,4 +1,4 @@
-import Aframe from './Aframe';
+import Aframe from './aframe';
 import List from './List';
 
 class Main {
