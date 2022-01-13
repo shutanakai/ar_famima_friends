@@ -7,20 +7,25 @@
         <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />
         <link href="./common.css" rel="stylesheet" type="text/css" />
         <link href="./get.css" rel="stylesheet" type="text/css" />
-        <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
-        <script>
-            // VConsole will be exported to `window.VConsole` by default.
-            const vConsole = new window.VConsole();
-        </script>
     </head>
     <body>
-        <div id="app">
-            <h2>{{ monsterNames[monsterId] }}と、おともだちになりました！</h2>
-            <img v-bind:src="`images/model_${monsterId}.png`" v-bind:alt="monsterNames[monsterId]" />
+        <div id="get" class="get">
+            <main class="get__main">
+                <h2 class="get__head">
+                    {{ monsterNames[monsterId] }}と、<br />
+                    おともだちになりました！
+                </h2>
+                <img
+                    class="get__image"
+                    v-bind:src="`images/model_${monsterId}.png`"
+                    v-bind:alt="monsterNames[monsterId]"
+                />
+                <a href="./list.html" class="get__button">ずかんにもどる</a>
+            </main>
         </div>
         <script>
             var app5 = new Vue({
-                el: '#app',
+                el: '#get',
                 data: {
                     userName: '',
                     monsterId: '',
